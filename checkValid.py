@@ -64,3 +64,7 @@ def rangecheck(num, minimum, maximum):
 
 if __name__ == '__main__':
     print(emailcheck('e@g.bm'))
+
+
+
+    # test to see works dsjkdfhsfdhsdfklhsdlhs
