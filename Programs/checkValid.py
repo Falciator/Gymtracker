@@ -1,16 +1,25 @@
 #email valid check /
+#passwordcheck /
 #length /
-#range
 import re
 
 
 def emailcheck(email):
     import re
     # email  format will be any letter/number/symbol @ letters. 2 letters min
-    formatview = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z]+(\.[A-Z|a-z]{2,})+')
+    formate = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z]+(\.[A-Z|a-z]{2,})+')
 
     # check if email meets the format
-    if re.fullmatch(formatview, email) and lengthcheck(email, 6, 2):
+    if re.fullmatch(formate, email) and lengthcheck(email, 6, 2):
+        return True
+    else:
+        return False
+
+
+def passwordcheck(password):
+    formatp = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+')
+
+    if re.fullmatch(formatp, password) and lengthcheck(password, 6, 2):
         return True
     else:
         return False
@@ -52,16 +61,8 @@ def lengthcheck(character, lengthcompare, symbol):
         return False
 
 
-def rangecheck(num, minimum, maximum):
-    if num.isnumeric() and minimum.isnumeric() and maximum.isnumeric():
-        if num >= minimum and num <= maximum:
-            return True
-        else:
-            return False
-    else:
-        return False
 
 
 if __name__ == '__main__':
-    print(emailcheck('e@g.bm'))
+    print(passwordcheck('23ehtsad'))
 
